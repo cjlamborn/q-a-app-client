@@ -53,7 +53,7 @@ const onUpdateSuccess = function (responseData) {
 
 const onCreateSuccess = function () {
   // add success message to content
-  $('#question-create-message').html('You created a new question!')
+  $('#answer-create-message').html('You created a new question!')
 
   // we just created a new book!
   // we can add a message to let the users know they should request all of
@@ -61,15 +61,14 @@ const onCreateSuccess = function () {
   $('#question-message-display').html(
     'Questions have been added! Click "View All" again to see all the questions.'
   )
-
   // add class for success messaging
-  $('#question-create-message').addClass('success')
+  $('#answer-create-message').addClass('success')
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
-    $('#question-create-message').html('')
-    $('#question-create-message').removeClass('success')
+    $('#answer-create-message').html('')
+    $('#answer-create-message').removeClass('success')
   }, 5000)
 
   // reset all forms
@@ -98,6 +97,7 @@ const onError = function () {
 }
 
 module.exports = {
+
   onDeleteSuccess,
   onUpdateSuccess,
   onCreateSuccess,

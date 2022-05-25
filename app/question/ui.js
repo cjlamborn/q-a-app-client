@@ -25,7 +25,7 @@ const onIndexSuccess = function (response) {
 
             <h3>Title: ${question.title}</h4>
             <p>Text: ${question.text}</p>
-            <form class="create-answer">
+            <form class="create-answer-dynamic" data-id=${question._id}>
             <div class="field_container">
             <input class="answer-field" name="answer[text]" type="text" placeholder="answer">
             <button class="submit-answer" type="submit">Submit Answer</button>
