@@ -12,6 +12,87 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div class="tab">
+        <button class="tab-one">Sign Up</button>
+        <button class="tab-two">Sign In</button>
+        <button class="tab-three">Change Password</button>
+        <button class="tab-four" id="sign-out-button">Sign Out</button>
+      </div>
+      <div id="signup">
+        <form id="sign-up-form">
+          <div class="field_container">
+            <input name="credentials[email]" type="email" placeholder="email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="password again">
+            <!-- add a class to button? class="button_text" -->
+            <button class="button-56" id="up" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      
+      <div id="signin">
+        <form id="sign-in-form">
+          <div class="field_container">
+            <input name="credentials[email]" type="email" placeholder="email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <button class="button-56" id="sign" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div id="change">
+        <h4>Change Password</h4>
+        <form id="change-password-form">
+          <input name="passwords[old]" type="password" placeholder="Enter old password">
+          <input name="passwords[new]" type="password" placeholder="Enter new password">
+          <button class="button-56" type="submit">Change Password</button>
+        </form>
+      </div>
+      
+      <section id="auth-display"></section>
+      <div id="intro">
+        <h1>Hello!
+        </h1>
+        <h2>Got a question?</h2>
+        <h2>Find an answer</h2>
+        <h3>New Users Sign Up</h3>
+        <h3>Returning Users Sign In</h3>
+      </div>
+      
+      <div id="front-page">
+        <h1>Welcome to the Kitty Q & A Forum</h1>
+
+        <h3>Here you can post questions and answers regarding your cat</h3>
+      </div>
+    <div id="create">
+      <h1>Post your question here</h1>
+      <form id="create-question">
+        <div class="field_container">
+          <input name="question[title]" type="text" placeholder="title">
+          <input name="question[text]" type="text" placeholder="text">
+          <button class="button-56" id="create-button" type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="question-create-message"></div>
+    </div>
+
+
+      <div id="index">
+        <button class="button-56" id="question-index">View All Questions</button>
+        <section id="question-display"></section>
+      </div>
+
+        
+        <section>
+          <div id="error-message"></div>
+          <div id="question-message-display"></div>
+        </section>
     </body>
 </html>
+<!-- <form action="/html/tags/html_form_tag_action.cfm" method="post">
+  <div>
+    <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+Hey... say something!
+</textarea>
+  </div>
+  <input type="submit" value="Submit">
+</form> -->
