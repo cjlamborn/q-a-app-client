@@ -97,7 +97,7 @@ const onCreateQuestion = function (event) {
 }
 
 // Handle clicking the dynamic destroy buttons
-const onDynamicDeleteWholesale = function (event) {
+const onDynamicDeleteQuestion = function (event) {
   // event.target is the delete button that was clicked on
   const deleteButton = event.target
 
@@ -147,6 +147,6 @@ module.exports = {
   onDeleteQuestion,
   onUpdateQuestion,
   onCreateQuestion,
-  onDynamicDeleteWholesale,
+  onDynamicDeleteQuestion,
   onDynamicUpdateQuestion
 }

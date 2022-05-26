@@ -19,7 +19,9 @@ $(() => {
   $('#question-message-display').on('click', function () {
     console.log('clicked')
     $('.update-question-dynamic').show()
+    $('.question-destroy-dynamic').show()
   })
+  $('#question-message-display').on('click', '.question-destroy-dynamic', questionEvents.onDynamicDeleteQuestion)
   $('#question-message-display').on('submit', '.update-question-dynamic', questionEvents.onDynamicUpdateQuestion)
   $('.tab-one').on('click', function () {
     $('.tab-one').show()
