@@ -11,30 +11,51 @@ const onIndexSuccess = function (response) {
   // create a string that will store the html for all of the books we want to
   // display on the page. Start as an empty string.
   let questionsHtml = ''
-  console.log('HERE')
+  console.log('In index success')
   console.log(viewQuestion)
-  console.log('HERE')
+  console.log('In index success')
   // loop through each book from the API
-  viewQuestion.forEach((question) => {
+  viewQuestion.forEach((question, answer) => {
+    let answersHTML = ''
+    question.answer.forEach(answer => {
+      answersHTML += `
+      <div class="view-answer" id=${answer._id}>
+        <p>Answer: ${answer.text}</p>
+      </div>
+      `
+    })
     // add (concatenate) the book html for each book, to the booksHtml string
     // when adding the delete button add a data-id attribute, with the id of the
     // button we want to delete
     // add a data-id attribute for our dynamic edit form as well
     questionsHtml += `
-         <div id=${question._id}>
-
-            <h3>Title: ${question.title}</h4>
-            <p>Text: ${question.text}</p>
+         <div class="card" id=${question._id}>
+            <div class="card-header">Question
+            <button class="view-edit">Edit</button></div>
+            <div class="card-body">
+            <h3 class="card-title">Title: ${question.title}</h4>
+            <p class="card-text">Text: ${question.text}</p>
+            <p>${answersHTML}</p>
             <form class="create-answer-dynamic" data-id=${question._id}>
             <div class="field_container">
             <input class="answer-field" name="answer[text]" type="text" placeholder="answer">
             <button class="submit-answer" type="submit">Submit Answer</button>
             </div>
+            </div>
             </form>
+               <form class="update-question-dynamic" data-id=${question._id}>
+                 <input type="text" name="question[title]" placeholder="title" required>
+                <input type="text" name="question[text]" placeholder="text" required>
+                <button type="submit">Update Question</button>
+              </form>
+              <button class='question-destroy-dynamic' data-id=${question._id}>Delete </button>
          </div> 
     `
   })
-
+  // <div class="view-answer" id=${answer._id}>
+  //   <p>Answers: ${answer.text}</p>
+  //   </div>
+  // class here, div, jquery target for when you insert answer /answers ui
   // <button class="show-create-answer-form" data-qid="${question._id}">Add Answer</button>
   // set the html for all of our books all at once
   // was wholesale-display

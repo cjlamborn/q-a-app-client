@@ -14,7 +14,13 @@ $(() => {
   $('#create-question').on('submit', questionEvents.onCreateQuestion)
   $('#question-index').on('click', questionEvents.onIndexQuestion)
   // $('.submit-answer').on('click', () => console.log('submit clicked'))
-  $('.submit-answer').on('submit', '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer)
+  // $('.submit-answer').on('submit', '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer)
+  $('#question-message-display').on('submit', '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer)
+  $('#question-message-display').on('click', function () {
+    console.log('clicked')
+    $('.update-question-dynamic').show()
+  })
+  $('#question-message-display').on('submit', '.update-question-dynamic', questionEvents.onDynamicUpdateQuestion)
   $('.tab-one').on('click', function () {
     $('.tab-one').show()
     $('#signup').toggle('slide')

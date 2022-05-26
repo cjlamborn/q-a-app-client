@@ -6,7 +6,7 @@ const store = require('../store.js')
 // getting all of a resource is commonly called an index or list action
 // make DELETE request to /questions/:id to delete a single book
 // deleting a single resource is commonly called a destroy action
-const destroy = function (id) {
+const destroyAnswer = function (id) {
   return $.ajax({
     url: 'http://localhost:4741/questions/' + id,
     method: 'DELETE',
@@ -16,7 +16,7 @@ const destroy = function (id) {
   })
 }
 
-const update = function (id, formData) {
+const updateAnswer = function (id, formData) {
   return $.ajax({
     url: 'http://localhost:4741/questions/' + id,
     method: 'PATCH',
@@ -27,7 +27,7 @@ const update = function (id, formData) {
   })
 }
 
-const create = function (formData) {
+const createAnswer = function (formData) {
   return $.ajax({
     url: 'http://localhost:4741/answers',
     method: 'POST',
@@ -40,7 +40,7 @@ const create = function (formData) {
 }
 
 module.exports = {
-  destroy,
-  update,
-  create
+  destroyAnswer,
+  updateAnswer,
+  createAnswer
 }

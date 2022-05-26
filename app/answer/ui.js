@@ -53,13 +53,14 @@ const onUpdateSuccess = function (responseData) {
 
 const onCreateSuccess = function () {
   // add success message to content
-  $('#answer-create-message').html('You created a new question!')
+  console.log('success')
+  $('#answer-create-message').html('You created a new answer!')
 
   // we just created a new book!
   // we can add a message to let the users know they should request all of
   // the books again to see the newly created book included
   $('#question-message-display').html(
-    'Questions have been added! Click "View All" again to see all the questions.'
+    'Questions have been answered! Click "View All" again to see all the questions.'
   )
   // add class for success messaging
   $('#answer-create-message').addClass('success')

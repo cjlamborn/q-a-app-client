@@ -116,7 +116,7 @@ const onDynamicDeleteWholesale = function (event) {
 }
 
 // Handle submitting the dynamic update forms
-const onDynamicUpdateWholesale = function (event) {
+const onDynamicUpdateQuestion = function (event) {
   // prevent default submit action to stop the page from refreshing
   event.preventDefault()
 
@@ -148,5 +148,5 @@ module.exports = {
   onUpdateQuestion,
   onCreateQuestion,
   onDynamicDeleteWholesale,
-  onDynamicUpdateWholesale
+  onDynamicUpdateQuestion
 }

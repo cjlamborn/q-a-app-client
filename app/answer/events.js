@@ -113,21 +113,22 @@ const onDynamicUpdateAnswer = function (event) {
 }
 
 const onDynamicCreateAnswer = function (event) {
+  console.log(event)
   // prevent default submit action to stop the page from refreshing
   event.preventDefault()
-  const prevDefaultAble = event
-
   // Extract the id from the update form that was submitted's data-id attribute
-  const qId = $(event.target).data('qid')
-
+  console.log(event.target.dataset)
+  console.log(event.target.dataset.id)
+  const qId = event.target.dataset.id
+  console.log(qId)
   // create a javascript object from the form where the user entered the book
   // information
-  const data = getFormFields(event.target)
-  data.answer.questionId = qId
-
+  const formData = getFormFields(event.target)
+  formData.answer.questionId = qId
+  console.log(formData)
   // make API call to update one book with the data we grabbed from the form
-  answerApi.createAnswer(data)
-    .then(() => questionEvents.onIndexQuestion(prevDefaultAble))
+  answerApi.createAnswer(formData)
+    .then(() => questionEvents.onIndexQuestion)
     .then(answerUi.onCreateSuccess)
     .catch(answerUi.onError)
 
