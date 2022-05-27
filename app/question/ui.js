@@ -2,14 +2,7 @@
 // const store = require('../store.js')
 
 const onIndexSuccess = function (response) {
-  // extract the books from the response's data into a variable
   const viewQuestion = response.questions
-
-  // log the information we get back from the API so we know how we can
-  // interact with it.
-  //   store.user = responseData.user
-  // create a string that will store the html for all of the books we want to
-  // display on the page. Start as an empty string.
   let questionsHtml = ''
   console.log('In index success')
   console.log(viewQuestion)
@@ -21,20 +14,21 @@ const onIndexSuccess = function (response) {
       answersHTML += `
       <div class="view-answer" id=${answer._id}>
         <p>Answer: ${answer.text}</p>
-      </div>
+         <button class='answer-destroy-dynamic' data-question-id=${question._id} data-answer-id=${answer._id}>Delete </button>
       `
     })
-    // add (concatenate) the book html for each book, to the booksHtml string
-    // when adding the delete button add a data-id attribute, with the id of the
-    // button we want to delete
-    // add a data-id attribute for our dynamic edit form as well
     questionsHtml += `
          <div class="card" id=${question._id}>
-            <div class="card-header">Question
-            <button class="view-edit">Edit</button></div>
+            <div class="card-header">Question</div>
             <div class="card-body">
             <h3 class="card-title">Title: ${question.title}</h4>
             <p class="card-text">Text: ${question.text}</p>
+            <form class="update-question-dynamic" data-id=${question._id}>
+                 <input type="text" name="question[title]" placeholder="title" required>
+                <input type="text" name="question[text]" placeholder="text" required>
+                <button class="button-56" type="submit">Update Question</button>
+              </form>
+              <button class='question-destroy-dynamic' data-id=${question._id}>Delete </button>
             <p>${answersHTML}</p>
             <form class="create-answer-dynamic" data-id=${question._id}>
             <div class="field_container">
@@ -43,61 +37,22 @@ const onIndexSuccess = function (response) {
             </div>
             </div>
             </form>
-               <form class="update-question-dynamic" data-id=${question._id}>
-                 <input type="text" name="question[title]" placeholder="title" required>
-                <input type="text" name="question[text]" placeholder="text" required>
-                <button type="submit">Update Question</button>
-              </form>
-              <button class='question-destroy-dynamic' data-id=${question._id}>Delete </button>
          </div> 
     `
   })
-  // <div class="view-answer" id=${answer._id}>
-  //   <p>Answers: ${answer.text}</p>
-  //   </div>
-  // class here, div, jquery target for when you insert answer /answers ui
-  // <button class="show-create-answer-form" data-qid="${question._id}">Add Answer</button>
-  // set the html for all of our books all at once
-  // was wholesale-display
+
   $('#question-message-display').html(questionsHtml)
 }
 
-const onShowSuccess = function (response) {
-  // log the information we get back from the API so we know how we can
-  // interact with it.
-
-  // build HTML element with data for one book
-  const questionHtml = `
-    <h4>Name: ${response.question.name}</h4>
-    <p>Location: ${response.question.location}</p>
-    <p>Roasts: ${response.question.roasts}</p>
-    <p>Amount: ${response.question.amount}</p>
-    <br>
-  `
-
-  // replace whatever was in the books-display element with our bookHtml
-  $('#question-message-display').html(questionHtml)
-
-  // reset all forms
-  $('form').trigger('reset')
-}
-
 const onDeleteSuccess = function () {
-  // add success message to our books-destroy-message element
   $('#delete-question-message').html('Question successfully deleted!')
 
-  // empty out the books-display element in case it was displaying information
-  // about the book we just deleted, replace with a message for the user to get
-  // all the books again.
   $('#question-message-display').html(
     'Questions have changed! Click "Get All" again to see all the questions'
   )
 
-  // add class for success messaging
   $('#delete-question-message').addClass('success')
 
-  // use setTimeout to allow the success message to stay for 5 seconds before
-  // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
     $('#delete-question-message').html('')
     $('#delete-question-message').removeClass('success')
@@ -113,18 +68,12 @@ const onUpdateSuccess = function (responseData) {
     'You successfully updated this question'
   )
 
-  // empty out the books-display element in case it was displaying information
-  // about the book we just updated, replace with a message for the user to get
-  // all the books again.
   $('#question-message-display').html(
     'Questions have changed! Click "Get All" again to see all the questions.'
   )
 
-  // add class for success messaging
   $('#question-update-message').addClass('success')
 
-  // use setTimeout to allow the success message to stay for 5 seconds before
-  // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
     $('#question-update-message').html('')
     $('#question-update-message').removeClass('success')
@@ -182,7 +131,6 @@ const onError = function () {
 
 module.exports = {
   onIndexSuccess,
-  onShowSuccess,
   onDeleteSuccess,
   onUpdateSuccess,
   onCreateSuccess,

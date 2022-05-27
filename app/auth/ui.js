@@ -73,7 +73,11 @@ const onSignOutSuccess = function () {
   $('#app-display').hide()
   $('#new-account').hide()
   $('#front-page').hide()
-  $('#view-account').hide()
+  $('#create').hide()
+  $('#index').hide()
+  $('#intro').show()
+  $('#change').hide()
+  $('#question-message-display').hide()
   $('form').trigger('reset')
 }
 

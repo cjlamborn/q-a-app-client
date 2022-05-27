@@ -105,10 +105,8 @@ const onDynamicDeleteQuestion = function (event) {
   const id = $(deleteButton).data('id')
 
   // make API call for deleting one book with the data we grabbed from the form
-  api
-    .destroy(id)
+  api.destroy(id)
 
-  // if the API call is successful then invoke the onDetroySuccess function
     .then(ui.onDeleteSuccess)
 
   // if the API call fails then run our onError function

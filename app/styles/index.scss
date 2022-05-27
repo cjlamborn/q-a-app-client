@@ -49,8 +49,7 @@ body {
 #question-index {
     display: none;
 }
-
-.button-56 {
+.answer-destroy-dynamic {
     align-items: center;
     background-color: #fee6e3;
     border: 2px solid #111;
@@ -73,7 +72,31 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-.button-56:after {
+
+.button-56, .question-destroy-dynamic, .submit-answer {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.button-56:after, .question-destroy-dynamic:after, .submit-answer:after {
     background-color: #111;
     border-radius: 8px;
     content: "";
@@ -88,21 +111,21 @@ body {
     z-index: -1;
 }
 
-.button-56:hover:after {
+.button-56:hover:after, .question-destroy-dynamic:after, .submit-answer:after {
     transform: translate(0, 0);
 }
 
-.button-56:active {
+.button-56:active, .question-destroy-dynamic:active, .submit-answer:active {
     background-color: #ffdeda;
     outline: 0;
 }
 
-.button-56:hover {
+.button-56:hover, .question-destroy-dynamic:hover, .submit-answer:hover {
     outline: 0;
 }
 
 @media (min-width: 768px) {
-    .button-56 {
+    .button-56, .question-destroy-dynamic, .submit-answer {
         padding: 0 40px;
     }
 }
@@ -116,12 +139,24 @@ body {
 .card-body {
     background-color: rgb(242, 221, 181);
 }
-.update-question-dynamic {
-    display: none;
+#auth-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.question-destroy-dynamic {
-    display: none;
+.font {
+    color: white;
+    display: flex;
+        justify-content: center;
+        align-items: center;
 }
-// .create-answer {
-//     display: none;
-// }
+#create-question, #index {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+#create-button {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}

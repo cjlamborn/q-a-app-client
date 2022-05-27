@@ -16,13 +16,15 @@ $(() => {
   // $('.submit-answer').on('click', () => console.log('submit clicked'))
   // $('.submit-answer').on('submit', '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer)
   $('#question-message-display').on('submit', '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer)
-  $('#question-message-display').on('click', function () {
-    console.log('clicked')
-    $('.update-question-dynamic').show()
-    $('.question-destroy-dynamic').show()
-  })
+  // $('#question-message-display').on('click', function () {
+  //   console.log('clicked')
+  //   $('.update-question-dynamic').show()
+  //   $('.question-destroy-dynamic').show()
+  // })
   $('#question-message-display').on('click', '.question-destroy-dynamic', questionEvents.onDynamicDeleteQuestion)
   $('#question-message-display').on('submit', '.update-question-dynamic', questionEvents.onDynamicUpdateQuestion)
+  $('#question-message-display').on('click', '.answer-destroy-dynamic',
+    answerEvents.onDynamicDeleteAnswer)
   $('.tab-one').on('click', function () {
     $('.tab-one').show()
     $('#signup').toggle('slide')
@@ -30,6 +32,10 @@ $(() => {
   $('.tab-two').on('click', function () {
     $('.tab-two').show()
     $('#signin').toggle('slide')
+  })
+  $('.tab-three').on('click', function () {
+    $('.tab-three').show()
+    $('#change').toggle('slide')
   })
 })
 // '.create-answer-dynamic', answerEvents.onDynamicCreateAnswer
