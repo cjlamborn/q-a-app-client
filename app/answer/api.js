@@ -8,7 +8,7 @@ const store = require('../store.js')
 // deleting a single resource is commonly called a destroy action
 const destroyAnswer = function (qId, aId) {
   return $.ajax({
-    url: 'http://localhost:4741/questions/' + qId + '/answers/' + aId,
+    url: 'https://desolate-tor-37361.herokuapp.com/questions/' + qId + '/answers/' + aId,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -18,7 +18,7 @@ const destroyAnswer = function (qId, aId) {
 
 const updateAnswer = function (id, formData) {
   return $.ajax({
-    url: 'http://localhost:4741/answers/' + id,
+    url: 'https://desolate-tor-37361.herokuapp.com/answers/' + id,
     method: 'PATCH',
     data: formData,
     headers: {
@@ -29,7 +29,7 @@ const updateAnswer = function (id, formData) {
 
 const createAnswer = function (formData) {
   return $.ajax({
-    url: 'http://localhost:4741/answers',
+    url: 'https://desolate-tor-37361.herokuapp.com/answers',
     method: 'POST',
     // include the book data that we will use to create the book
     data: formData,
