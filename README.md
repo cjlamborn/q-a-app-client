@@ -1,130 +1,76 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Q & A App
 
-# browser-template
+This Q & A App allows users to sign up and sign in, and post questions, see those questions, and post answers. Users can update and delete questions and also delete answers.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## App Screenshots
 
-## Installation
+# Landing Page
 
-1. [Download](../../archive/main.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `sei/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-main.zip`.
-1. Rename the template directory from `browser-template-main` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled **"…or push an existing
-   repository from the command line."** Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-   > **Note:** This last step will rename your default branch to **main**. This branch name will be used when deploying.
+<img width="663" alt="Screen Shot 2022-05-25 at 1 21 11 PM" src="https://media.git.generalassemb.ly/user/36739/files/34fd161c-4e5d-4d70-a38b-e0ed19603fe6">
 
-## Structure
+# Landing Page Signed In
 
-### App
+<img width="751" alt="Screen Shot 2022-05-27 at 9 14 34 AM" src="https://media.git.generalassemb.ly/user/36739/files/71f92806-4f39-49b1-9a76-6dc7bf5ef088">
 
-Developers should store JavaScript files in [`app`](app).
-The "manifest" or entry-point is
-[`app/app.js`](app/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+# View Questions Edit Delete Options
 
-### Config
+<img width="902" alt="Screen Shot 2022-05-27 at 9 16 55 AM" src="https://media.git.generalassemb.ly/user/36739/files/3a5d9468-d8c7-468e-ab97-030a18c68887">
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`app/config.js`](app/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+## Important Links
+- [Client Repo](https://github.com/cjlamborn/q-a-app-client)
+- [API Repo](https://github.com/cjlamborn/q-a-app-api)
+- [Deployed API](https://desolate-tor-37361.herokuapp.com/)
+- [Deployed Client]()
 
-### Styles
+## Wireframe
 
-Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/index.scss`](app/styles/index.scss). Bootstrap version 3 is
-included in this template.
+![qa-wireframe](https://media.git.generalassemb.ly/user/36739/files/e703faf5-96c1-4d69-984e-e8feb155734e)
 
-### Forms and Using `getFormFields`
+## ERD 
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+![qa-erd](https://media.git.generalassemb.ly/user/36739/files/b50078b5-9434-4455-89b1-b1d6e516a9e2)
 
-### Deployment
+# Planning Story
+Create wireframe and ERD
+Be able to POST a question through the backend with Express
+GET all of the questions from a single user
+PATCH a question for a user
+DELETE a question or and answer that a user has created
+Style the app
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+# User Stories
+As a user I would like to sign up or sign in
+As a user I would like to post a question.
+As a user I would like to view the questions.
+As a user I would like to edit my questions.
+As a user I would like to delete my questions.
+As a user I would like to post an answer.
+As a user I would like to delete an answer.
+As a user I would like to change my password.
+As a user I would like to sign out.
 
-## Adding Images
+# Technologies Used
+Front End:
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
+Javascript
+CSS
+HTML
+SCSS
+Visual Studio Code
+JQUERY
+AJAX
+Modal
 
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
+# Back End:
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+Express
+MongoDB
 
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys main branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+# Installation
+Fork and Clone the Repository
+Checkout to a new branch
+Run npm install 
+Run npm run dev
+Your site will be hosted at http://localhost:7165
+Future Versions
+- I hope to set it up so that multiple users can see each others questions and post answers to them too.
