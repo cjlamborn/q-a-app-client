@@ -1,0 +1,162 @@
+@import '~bootstrap/scss/bootstrap';
+body {
+    background-color: rgb(236, 205, 148);
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid rgb(133, 161, 211);
+    background-color: rgb(133, 161, 211);
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    color: rgb(252, 252, 178);
+}
+
+.tab button.active {
+    background-color: rgb(133, 161, 211);
+}
+
+#signup {
+    display: none;
+}
+
+#signin {
+    display: none;
+}
+
+.tab-three {
+    display: none;
+}
+
+.tab-four {
+    display: none;
+}
+#change {
+    display: none;
+
+}
+#question-index {
+    display: none;
+}
+.answer-destroy-dynamic {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-56, .question-destroy-dynamic, .submit-answer {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.button-56:after, .question-destroy-dynamic:after, .submit-answer:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.button-56:hover:after, .question-destroy-dynamic:after, .submit-answer:after {
+    transform: translate(0, 0);
+}
+
+.button-56:active, .question-destroy-dynamic:active, .submit-answer:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+.button-56:hover, .question-destroy-dynamic:hover, .submit-answer:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .button-56, .question-destroy-dynamic, .submit-answer {
+        padding: 0 40px;
+    }
+}
+#front-page, #create {
+    display: none;
+    position: relative;
+}
+.card-header {
+    background-color: rgb(133, 161, 211);
+}
+.card-body {
+    background-color: rgb(242, 221, 181);
+}
+#auth-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.font {
+    color: white;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+#create-question, #index {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+#create-button {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
