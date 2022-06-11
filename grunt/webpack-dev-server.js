@@ -20,7 +20,7 @@ const port = 7165
 // Set the mode to development (default is 'production')
 webpackConfig.mode = 'development'
 
-// make `jQuery` and `$` available in the development console
+// make `jQuery` and `$` available in the development
 webpackConfig.module.rules.push({
   test: require.resolve('jquery'),
   use: [{
