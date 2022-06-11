@@ -4,9 +4,6 @@
 const onIndexSuccess = function (response) {
   const viewQuestion = response.questions
   let questionsHtml = ''
-  console.log('In index success')
-  console.log(viewQuestion)
-  console.log('In index success')
   // loop through each book from the API
   viewQuestion.forEach((question, answer) => {
     let answersHTML = ''

@@ -9,9 +9,6 @@ const getFormFields = require('../../lib/get-form-fields.js')
 const onDynamicDeleteAnswer = function (event) {
   // event.target is the delete button that was clicked on
   const deleteButton = event.target
-  console.log(event.target)
-  console.log(event)
-  console.log('IN DYNAMIC DELETE ANSWER')
   // Extract the id from the delete button that was clicked on's data-id attribute
   const aId = $(deleteButton).data('answer-id')
   const qId = $(deleteButton).data('question-id')
@@ -21,19 +18,14 @@ const onDynamicDeleteAnswer = function (event) {
     .catch(answerUi.onError)
 }
 const onDynamicCreateAnswer = function (event) {
-  console.log(event)
   // prevent default submit action to stop the page from refreshing
   event.preventDefault()
   // Extract the id from the update form that was submitted's data-id attribute
-  console.log(event.target.dataset)
-  console.log(event.target.dataset.id)
   const qId = event.target.dataset.id
-  console.log(qId)
   // create a javascript object from the form where the user entered the book
   // information
   const formData = getFormFields(event.target)
   formData.answer.questionId = qId
-  console.log(formData)
   // make API call to update one book with the data we grabbed from the form
   answerApi
     .createAnswer(formData)

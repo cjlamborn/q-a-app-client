@@ -53,7 +53,6 @@ const onUpdateSuccess = function (responseData) {
 
 const onCreateSuccess = function () {
   // add success message to content
-  console.log('success')
   $('#answer-create-message').html('You created a new answer!')
 
   // we just created a new book!
